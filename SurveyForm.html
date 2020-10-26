@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            background-image: url(https://media.istockphoto.com/videos/video-game-retro-background-video-id1008358364?s=640x640);
+            /* background-size: 100% 100%; will make the background stretch if need be depending on the desktop resolution*/
+            background-size: cover; /* This will cover the entire element, meaning the image will keep its original proportions*/
+            background-attachment: fixed; /*This allows the background to stay in a fixed position while everything else can be moved around*/
+        }
+        .box-container {
+            background-color: #e6e6ff;
+            margin: auto;
+            width: 650px;
+            height: auto;
+            padding: 20px;
+            border-radius: 40px; /*forms the round edges of this box*/
+            box-shadow: 0px 0px 40px 0px blue; /*a faint blue shadow will appear behind the box for stylistic purposes*/
+        }
+
+        #title {
+            text-align: center;
+        }
+
+        #description {
+            text-align: center;
+        }
+
+        #survey-form {
+            text-align: center;
+        }
+
+        #name-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /*Use align-items when dealing with the cross axis */
+            font-weight: bold;
+        }
+
+        #email-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        #number-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .occupation {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #student-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #freelance-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #unemployed-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #employed-label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #comment-label {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <div class="box-container">
+            <h1 id= title>
+                Video Game Log<h1>
+                    <!-- a title with an id="title" in H1 sized text-->
+                </h1>
+
+                <p id="description">This survey logs in how many hours you play video games per day</p><!-- short explanation with id="description" in Psized text-->
+
+                <form id="survey-form">
+                    <label id="name-label">
+                        Name
+                        <input id="name" type="text" placeholder="John" required>
+                    </label>
+                    <!--input type="text" allows you to get input from the user with the id="name" and uses HTML5 to require a field, which means it will give an error if the user does not input anything in the field. It also has a labels that describe the purpose of the field with id="name-label"-->
+                    <label id="email-label">
+                        Email
+                        <input id="email" type="email" placeholder="example@gmail.com" required>
+                    </label><!-- input type="email" allows the user to enter an email in a field with id="email" and uses HTML5 to require a field, if the user does not input anything in the field or is formatted that's unlike an email, then it will give an error. It also has a label that describes the required field with an id="email-label"-->
+                    <label id="number-label">
+                        Hours
+                        <input id="number" type="number" placeholder="0" min="0" max="24" required>
+                    </label><!-- input type="number" allows the user to enter a number and using HTML5 the user is required to enter specifically a number, otherwise it will give an error. It also has a label that describes what is required in the field with an id="number-label"-->
+                    <p>Please indicate your highest education</p>
+                    <select id="dropdown">
+                        <option value="high school">High School</option>
+                        <option value="associates">Associates</option>
+                        <option value="bachelors">Bachelors</option>
+                        <option value="masters">Masters</option>
+                        <option value="doctoral">Doctoral</option>
+                        <option value="unspecified">Unspecified</option>
+                    </select><!-- selects an option from a dropdown that has a corresponding id="dropdown"-->
+                    <p>Please choose your occupation</p>
+                    <div class="occupation">
+                        <label id="student-label" for="student">
+                            Student
+                            <input id="student" value="student" type="radio" name="occupation">
+                        </label>
+                        <label id="freelance-label" for="freelance">
+                            Freelance
+                            <input id=freelance value="freelance" type="radio" name="occupation">
+                        </label>
+                        <label id="unemployed-label" for="unemployed">
+                            Unemployed
+                            <input id="unemployed" value="unemployed" type="radio" name="occupation">
+                        </label>
+                        <label id="employed-label" for="employed">
+                            Employed
+                            <input id="employed" value="employed" type="radio" name="occupation">
+                        </label>
+                    </div>
+                    <p>Please choose the genre(s) for the video games that you play</p>
+                    <label for="rpg">
+                        RPG
+                        <input id="rpg" value="rpg" type="checkbox" name=genre>
+                    </label>
+                    <label for="platformer">
+                        Platformer
+                        <input id="platformer" value="platformer" type="checkbox" name="genre">
+                    </label>
+                    <label for="shooter">
+                        Shooter
+                        <input id="shooter" value="shooter" type="checkbox" name="genre">
+                    </label>
+                    <label for="fighting">
+                        Fighting
+                        <input id="fighting" value="fighting" type="checkbox" name="genre">
+                    </label>
+                    <label for="beat 'em up">
+                        Beat 'em Up
+                        <input id="beat 'em up" value="beat 'em up" type="checkbox" name="genre">
+                    </label>
+                    <label for="stealth">
+                        Stealth
+                        <input id="stealth" value="stealth" type="checkbox" name="genre">
+                    </label>
+                    <label for="survival">
+                        Survival
+                        <input id="survival" value="survival" type="checkbox" name="genre">
+                    </label>
+                    <label for="horror">
+                        Horror
+                        <input id="horror" value="horror" type="checkbox" name="genre">
+                    </label>
+                    <label for="battle royale">
+                        Battle Royale
+                        <input id="battle royale" value="battle royale" type="checkbox" name="genre">
+                    </label>
+                    <label for="rhythm">
+                        Rhythm
+                        <input id="rhythm" value="rhythm" type="checkbox" name="genre">
+                    </label>
+                    <label for="sports">
+                        Sports
+                        <input id="sports" value="sports" type="checkbox" name="genre">
+                    </label>
+                    <label for="simulation">
+                        Simulation
+                        <input id="simulation" value="simulation" type="checkbox" name="genre">
+                    </label>
+                    <label for="strategy">
+                        Strategy
+                        <input id="strategy" value="strategy" type="checkbox" name="genre">
+                    </label>
+                    <br>
+                    <br>
+                    <label id="comment-label" for="comments">
+                        If you have any additional comments, please write them here
+                        <textarea id="comments" name="comments" rows="10" cols="60"></textarea>
+                    </label>
+                    <button id="submit" type="submit">Submit</button>
+                </form>
+                <!-- a form with an id="survey-form". The value attribute allows the data to be logged so for example if you have input type=radio value="employed" name="occupation", then when the user clicks on the employed button, then the form data will be occupation=employed. if the value attribute is not there, then the data form will be occupation=on, so it's useful when logging in data-->
+        </div>
+    </main>
+</body>
+</html>
